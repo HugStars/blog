@@ -10,37 +10,67 @@
       padding: 0;
     }
 
+    :root {
+      --bg: #f3f6fd;
+      --pbg: #fff;
+      --hover: #c3cff4;
+      --tc: #201d2f;
+      --mtc: #4a4a4a;
+      --c1: #fee4cb;
+      --c1tc: #ff942e;
+      --c2: #e9e7fd;
+      --c2tc: #4f3ff0;
+      --c3: #dbf6fd;
+      --c3tc: #096c86;
+      --c4: #ffd3e2;
+      --c4tc: #df3670;
+      --c5: #c8f7dc;
+      --c5tc: #34c471;
+      --mask: hsla(0, 0%, 100%, 0.6);
+    }
+
+    body {
+      background: var(--bg);
+    }
+
     header {
       width: 100vw;
       height: 100px;
-      background: rgb(255, 240, 202);
+      background: var(--c1);
     }
 
     main {
       width: 100vw;
       height: 300px;
-      background: rgb(161, 255, 236);
+      background: var(--c2);
     }
 
     footer {
       width: 100vw;
       height: 300px;
-      background: rgb(161, 255, 236);
+      background: var(--c3);
+    }
+
+    h1 {
+      text-align: center ;
     }
   </style>
+
 </head>
 
 <body>
   <header>
-
+    <h1>header</h1>
   </header>
 
   <main>
-
+    <h1>main</h1>
   </main>
-  <footer>
 
+  <footer>
+    <h1>footer</h1>
   </footer>
+
   <script>
 
   </script>
