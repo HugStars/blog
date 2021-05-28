@@ -1,0 +1,57 @@
+## 2021.05.26
+
+### 1、微信小程序优劣势：
+
+ #### 优势：
+
+  * 即用即走，免安装，省流量，省时间，不占用桌面。
+  * 依托微信的流量，推广传播具有天然优势。
+  * 开发成本比原生APP低。
+
+#### 缺点：
+
+  * 用户留存：即用即走是优势，也有一定的问题。
+  * 入口比原生APP要深。
+  * 限制较多：包的大小不能超过2M，页面栈只能保存10个页面。
+
+
+
+### 2、怎么解决小程序的异步请求问题？
+
+小程序支持ES6语法，
+
+利用promise：resolve 返回，代码走then，reject 返回，那么代码就会走catch。
+
+我们把之后要执行的代码放在then中，如果发起的请求出错，那么程序就会通过reject返回信息，
+
+
+
+### 3、如何实现下拉刷新？
+
+1. 首先在全局config中的window中配置 `enablePullDownRefresh`
+
+   ~~~json
+   "enablePullDownRefresh": true,
+   ~~~
+
+2. 在 `Page` 中定义 `onPullDownRefresh` 钩子函数，到达下拉刷新条件后，该钩子函数执行，发起请求方法。
+
+3. 请求返回后，调用 `wx.stopPullDownRefresh` 停止下拉刷新。
+
+### 4、bindtap和catchtap的区别是什么？
+
+  * 同：都是点击事件的函数，在点击时触发。
+  * 异：`bindtap` 不会阻止冒泡事件；`catchtap`会阻止冒泡事件。
+
+### 5、`wx.navigateTo()`、`wx.redirectTo()`、`wx.switchTab()`、`wx.navigateBack()`、`wx.reLaunch()`的区别
+
+* #### `wx.navigateTo()`:保留当前页面，跳转到应用内的某个方面。不能跳转到TabBar页面。
+
+* #### `wx.redirectTo()`：关闭当前页面，跳转到应用内的某个页面。不能跳转到TabBar页面。
+
+* #### `wx.switchTab()`：关闭所有非TabBar页面，跳转到TabBar页面。
+
+* #### `wx.navigateBack()` ：关闭当前页面，返回上一级或多级页面，通过getCurrentPages()获取当前的页面栈，决定需要返回几层。
+
+* #### `wx:reLaunch()`：关闭所有页面，打开应用应用内的某个页面。
+
